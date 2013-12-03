@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bill>
+  <defaultinfo>
+    <company>北京元年科技股份有限公司</company>
+    <billname>出差申请单</billname>
+    <people>范家钊</people>
+    <dep>云事业部</dep>
+    <date>2013-12-3</date>
+  </defaultinfo>
+</bill>
