@@ -2,18 +2,34 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>demo2</title>
+    <script src="webstore.js"></script>
 </head>
 
 <body>
     <script>
-        // debugger;
-        var xml = new ActiveXObject("Microsoft.XMLDOM");
-        xml.async = false;
-        xml.load("test2.xml");
+         debugger;
+        var xmlStr=webstore.get('test2_xml'),
+            xml= new ActiveXObject("Microsoft.XMLDOM"),
+            xsltStr=webstore.get('test2_xslt'),
+            xslt=new ActiveXObject("Microsoft.XMLDOM");
 
-        var xslt = new ActiveXObject("Microsoft.XMLDOM");
-        xslt.async = false;
-        xslt.load("test2.xslt");
+        xml.async=false;
+        xslt.async=false;
+
+        if(xmlStr){
+            xml.loadXML(xmlStr);
+        }
+        else{
+            xml.load('test2.xml');
+            webstore.set('test2_xml',xml.xml);
+        }
+        if(xsltStr){
+            xml.loadXML(xsltStr);
+        }
+        else{
+            xslt.load('test2.xslt');
+            webstore.set('test2_xslt',xslt.xml);
+        }
 
         document.write(xml.transformNode(xslt));
     </script>
