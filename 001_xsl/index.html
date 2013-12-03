@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>拼装单据</title>
+	<style>
+        html { font: 14px Tahoma,Helvetica,Arial; }
+        .title { padding: 15px; background: #eee; }
+        ul{list-style: none;}
+        ul li{margin-top:15px;}
+
+        #ifr{width:1000px;height:600px;border:none;}
+	</style>
+</head>
+<body>
+	<p class="title">
+		这个demo使用xslt定义的格式和xml数据拼装单据
+	</p>
+
+	<ul>
+		<li><a url="test.html" href="#">出差申请单</a></li>
+		<li><a url="test2.html" href="#">报销单</a></li>
+	</ul>
+
+	<iframe id="ifr">
+
+	</iframe>
+
+	<script>
+		var as=document.getElementsByTagName('a');
+		for(var i in as){
+			as[i].onclick=function(){
+				var ifr=document.getElementById('ifr');
+				ifr.src=this.attributes['url'].nodeValue;
+			}
+		}
+	</script>
+</body>
