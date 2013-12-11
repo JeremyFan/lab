@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        //debugger;
+        var xml = document.implementation.createDocument('', '', null);
+        xml.async = false;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'test.xml', false);
+        xhr.send(null);
+        //xml = xhr.responseXML.documentElement;
+
+        var oParser = new DOMParser();
+        xml = oParser.parseFromString(xhr.response, "text/xml");
+
+        var xslt = document.implementation.createDocument('', '', null);
+        xslt.async = false;
+
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open("GET", 'test.xslt', false);
+        xhr2.send(null);
+        //xslt = xhr2.responseXML.documentElement;
+
+
+        var oParser = new DOMParser();
+        xslt = oParser.parseFromString(xhr2.response, "text/xml");
+
+
+
+
+        /*
+        var processor = new XSLTProcessor();
+        processor.importStylesheet(xslt);
+        var result = processor.transformToDocument(xml);
+        var serializer = new XMLSerializer();
+        serializer.serializeToString(result);
+        */
+
+        //定义XSLTProcesor对象
+        var xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslt);
+        // transformToDocument方式
+        var result = xsltProcessor.transformToDocument(xml);
+        var xmls = new XMLSerializer();
+        var r = xmls.serializeToString(result);
+
+        document.write(r);
+
+    </script>
+</body>
+</html>

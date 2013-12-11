@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var xmlStr = webstore.get('test_xml'),
+        xml = new ActiveXObject("Microsoft.XMLDOM"),
+        xsltStr = webstore.get('test_xslt'),
+        xslt = new ActiveXObject("Microsoft.XMLDOM");
+
+        xml.async = false;
+        xslt.async = false;
+
+        if (xmlStr) {
+            xml.loadXML(xmlStr);
+        }
+        else {
+            xml.load('test.xml');
+            webstore.set('test_xml', xml.xml);
+        }
+        if (xsltStr) {
+            xslt.loadXML(xsltStr);
+        }
+        else {
+            xslt.load('test.xslt');
+            webstore.set('test_xslt', xslt.xml);
+        }
+
+        document.write(xml.transformNode(xslt));
+    </script>
+</body>
+</html>
