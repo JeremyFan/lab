@@ -7,30 +7,114 @@
 
 <body>
     <script>
+         // 创建对象
+        function createXml(async) {
+            // debugger;
+            var xml;
+            // for IE
+            if (window.ActiveXObject) {
+                xml = new ActiveXObject("Microsoft.XMLDOM");
+            }
+            // for Others
+            else if (document.implementation && document.implementation.createDocument) {
+                xml = document.implementation.createDocument("", "", null);
+            }
+
+            if (xml) {
+                xml.async = async;
+                return xml;
+            } else console.error("create not success.");
+        }
+
+        // 加载xml文件
+        function loadXml(xml, xmlDoc) {
+            debugger;
+            // for IE
+            if (xml.load)
+                xml.load(xmlDoc);
+            // for Others
+            else {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", xmlDoc, false);
+                xhr.send(null);
+                xml = xhr.responseXML.documentElement;
+            }
+        }
+
+        // 加载xml字符串
+        function loadXmlStr(xml, xmlStr) {
+            debugger;
+            if (xml.loadXML)
+                xml.loadXML(xmlStr);
+            else {
+                var parser = new DOMParser();
+                xml = parser.parseFromString(xmlStr);
+            }
+        }
+
+        // 转换XML到HTML
+        function transformToHTML(xml, xslt) {
+            debugger;
+            // for Chrome, FF
+            if (typeof XSLTProcessor == 'function') {
+                var xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xslt);
+                var xmlFragment = xsltProcessor.transformToFragment(xml, document);
+                return GetXmlStringFromXmlDoc(xmlFragment);
+            }
+            // for IE
+            else if (typeof xml.transformNode == "undefined") {
+                return xml.transformNode(xsltDoc);
+            }
+        }
+
+        debugger;
+        /*
         var xmlStr=webstore.get('test_xml'),
             xml= new ActiveXObject("Microsoft.XMLDOM"),
             xsltStr=webstore.get('test_xslt'),
             xslt=new ActiveXObject("Microsoft.XMLDOM");
+        */
 
+        var xmlStr = webstore.get('test_xml'),
+            xml = createXml(false),
+            xsltStr = webstore.get('test_xslt'),
+            xslt = createXml(false);
+        /*
         xml.async=false;
         xslt.async=false;
+        */
 
-        if(xmlStr){
+        /*
+        if (xmlStr) {
             xml.loadXML(xmlStr);
-        }
-        else{
+        } else {
             xml.load('test.xml');
-            webstore.set('test_xml',xml.xml);
+            webstore.set('test_xml', xml.xml);
         }
-        if(xsltStr){
+        if (xsltStr) {
             xslt.loadXML(xsltStr);
-        }
-        else{
+        } else {
             xslt.load('test.xslt');
-            webstore.set('test_xslt',xslt.xml);
+            webstore.set('test_xslt', xslt.xml);
+        }
+        */
+        if (xmlStr) {
+            loadXmlStr(xml, xmlStr);
+        } else {
+            loadXml(xml, 'test.xml');
+            webstore.set('test_xml', xml.xml);
         }
 
-        document.write(xml.transformNode(xslt));
+         if (xsltStr) {
+            loadXmlStr(xslt, xsltStr);
+        } else {
+            loadXml(xslt, 'test.xslt');
+            webstore.set('test_xslt', xslt.xml);
+        }
+
+         // document.write(xml.transformNode(xslt));
+        transformToHTML(xml, xslt);
     </script>
 
 </body>

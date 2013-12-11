@@ -12,7 +12,7 @@
         };
     }
         // 支持addBehavior的浏览器
-    else if (true) {
+    else if (typeof window.document.documentElement.addBehavior == 'object') {
         // 存储空间名
         var storespace = 'StoreSpace';
         var setStore = function () {
