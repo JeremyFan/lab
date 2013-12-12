@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/TR/xhtml1/strict">
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <body>
         <style>
+          <![CDATA[
           .company{padding:0;margin:0;}
           .bill{width:700px;height:450px;background:#eee;padding:15px;}
           .bill h3{text-align:center;}
@@ -17,19 +18,30 @@
           .why{width:99.5%;height:50px;border:none;}
 
           #ss{height:48px;width:200px}
+        ]]>
         </style>
         <div class='bill'>
-        <p class='company'><xsl:value-of select="bill/defaultinfo/company"/></p>
-        <h3><xsl:value-of select="bill/defaultinfo/billname"/></h3>
-        <div>
-          <span class="key">出差人</span>
-          <span class="value"><xsl:value-of select="bill/defaultinfo/people"/></span>
-          <span class="key">出差人部门</span>
-          <span class="value"><xsl:value-of select="bill/defaultinfo/dep"/></span>
-          <span class="key">日期</span>
-          <span class="value"><xsl:value-of select="bill/defaultinfo/date"/></span>
-        </div>
-        <table id='tb' cellspacing="0">
+          <p class='company'>
+            <xsl:value-of select="bill/defaultinfo/company"/>
+          </p>
+          <h3>
+            <xsl:value-of select="bill/defaultinfo/billname"/>
+          </h3>
+          <div>
+            <span class="key">出差人</span>
+            <span class="value">
+              <xsl:value-of select="bill/defaultinfo/people"/>
+            </span>
+            <span class="key">出差人部门</span>
+            <span class="value">
+              <xsl:value-of select="bill/defaultinfo/dep"/>
+            </span>
+            <span class="key">日期</span>
+            <span class="value">
+              <xsl:value-of select="bill/defaultinfo/date"/>
+            </span>
+          </div>
+          <table id='tb' cellspacing="0">
             <tr>
               <td>预计出差时间</td>
               <td style="text-align:center;">到</td>
@@ -52,21 +64,43 @@
               <td>借款金额</td>
               <td colspan="3">人民币（大写） ￥</td>
             </tr>
-        </table>
+          </table>
 
-        <div class="approve">
-          <span>请选择审批人</span>
-          <select id='ss'>
-            <option>郭嘉</option>
-            <option>贾诩</option>
-            <option>荀攸</option>
-            <option>荀彧</option>
-            <option>程昱</option>
-          </select>
+          <div class="approve">
+            <span>请选择审批人</span>
+            <select id='ss'>
+              <option>郭嘉</option>
+              <option>贾诩</option>
+              <option>荀攸</option>
+              <option>荀彧</option>
+              <option>程昱</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <script>
-        var values=document.getElementsByClassName('value');
+
+        <script>
+          <![CDATA[
+          
+        var values=$('.value');
+        values.each(function(index,ele){
+          ele.onclick=function(){
+            var value=prompt("change value:","");
+            if(value==""||value==null)
+              return;
+            this.innerHTML=value;
+          }
+        });
+        
+        var ele_why=$('.why')[0];
+        ele_why.onfocus=function(){
+          this.style.outline="2px solid orange";
+        }
+        ele_why.onblur=function(){
+          this.style.outline="none";
+        }
+        
+        /*
+        //var values=document.getElementsByClassName('value');
         for(var i in values){
           values[i].onclick=function(){
             var value=prompt("change value:","");
@@ -75,7 +109,8 @@
             this.innerHTML=value;
           }
         }
-
+        */
+        /*
         var ele_why=document.getElementsByClassName('why');
         ele_why[0].onfocus=function(){
           this.style.outline="2px solid orange";
@@ -83,9 +118,11 @@
         ele_why[0].onblur=function(){
           this.style.outline="none";
         }
-
-      </script>
-    </body>
-  </html>
+        */
+        
+      ]]>
+        </script>
+      </body>
+    </html>
   </xsl:template>
 </xsl:stylesheet>
