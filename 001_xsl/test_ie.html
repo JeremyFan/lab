@@ -6,14 +6,20 @@
 </head>
 <body>
     <script>
+        /*
         var xmlStr = webstore.get('test_xml'),
         xml = new ActiveXObject("Microsoft.XMLDOM"),
         xsltStr = webstore.get('test_xslt'),
         xslt = new ActiveXObject("Microsoft.XMLDOM");
-
+        if (xmlStr == 'undefined') {
+            xmlStr = '';
+        }
+        if (xsltStr == 'undefined') {
+            xsltStr = '';
+        }
         xml.async = false;
         xslt.async = false;
-
+        debugger;
         if (xmlStr) {
             xml.loadXML(xmlStr);
         }
@@ -28,6 +34,15 @@
             xslt.load('test.xslt');
             webstore.set('test_xslt', xslt.xml);
         }
+        */
+
+        var xml = new ActiveXObject("Microsoft.XMLDOM"),
+            xslt = new ActiveXObject("Microsoft.XMLDOM");
+        xml.async = false;
+        xslt.async = false;
+
+        xml.load('test.xml');
+        xslt.load('test.xslt');
 
         document.write(xml.transformNode(xslt));
     </script>
