@@ -4,6 +4,72 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <script src="jquery-1.10.2.js" type="text/javascript"></script>
+    <style>
+
+        .company {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bill {
+            width: 700px;
+            height: 450px;
+            background: #eee;
+            padding: 15px;
+        }
+
+            .bill h3 {
+                text-align: center;
+            }
+
+        .value {
+            margin: 0 10px;
+            padding: 0 10px;
+            border-bottom: 1px solid black;
+            cursor: default;
+        }
+
+        #tb {
+            width: 700px;
+            border: 1px solid black;
+            margin-top: 10px;
+            background: white;
+        }
+
+            #tb tr td {
+                border: 1px solid #bbb;
+                height: 50px;
+                width: 25%;
+            }
+
+        .approve {
+            width: 700px;
+            height: 50px;
+            margin-top: 50px;
+            background: white;
+            border: 1px solid #bbb;
+        }
+
+            .approve span {
+                width: 175px;
+                height: 50px;
+                line-height: 50px;
+                display: inline-block;
+                border-right: 1px solid #bbb;
+            }
+
+        .why {
+            width: 99.5%;
+            height: 50px;
+            border: none;
+        }
+
+        #ss {
+            height: 48px;
+            width: 200px;
+        }
+
+    </style>
 </head>
 <body>
     <script>
@@ -36,15 +102,14 @@
             webstore.set('test_xslt', xslt.xml);
         }
         */
-        debugger;
 
         var xml = new ActiveXObject("Microsoft.XMLDOM"),
             xslt = new ActiveXObject("Microsoft.XMLDOM");
         xml.async = false;
         xslt.async = false;
 
-        xml.load('test.xml');
-        xslt.load('test.xslt');
+        xml.load('http://jeremyfan.github.io/lab/001_xsl/test.xml');
+        xslt.load('http://jeremyfan.github.io/lab/001_xsl/test.xslt');
 
         document.write(xml.transformNode(xslt));
     </script>
