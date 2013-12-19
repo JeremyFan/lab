@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <style>
+        body { min-width:1000px}
+        .g-left, .g-right,.g-rc { height: 500px; }
+        .g-left { position: relative; float: left; width: 200px; margin-right: -200px; background: pink; }
+        .g-right { width: 100%; float: right;}
+        .g-rc { margin-left: 200px; background: lightyellow; }
+            .g-rc .m-content { width:600px;height:400px;margin:10px auto;border:1px solid black;}
+
+    </style>
+</head>
+<body>
+    <div class="g-left">左侧</div>
+    <div class="g-right">
+        <div class="g-rc">
+            <span>右侧</span>
+            <div class="m-content">
+                内容
+            </div>
+        </div>
+    </div>
+</body>
+</html>
