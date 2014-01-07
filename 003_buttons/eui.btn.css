@@ -112,10 +112,12 @@
             .eui-btn-grey:hover {
                 background-color: #ddd;
                 border-color: #bbb;
+                color: #333;
             }
 
             .eui-btn-grey:active {
                 border-color: #fff;
+                color: #333;
             }
 
         .eui-btn-grey-dis {
