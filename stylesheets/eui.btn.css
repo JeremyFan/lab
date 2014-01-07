@@ -4,7 +4,6 @@
             padding: 2px 5px;
             border: 1px solid;
             border-radius: 5px;
-            font:14px 'Microsoft YaHei';
             color: #fff;
             cursor: pointer;
         }
@@ -99,7 +98,7 @@
 
         .eui-btn-yellow-dis {
             background-color: #f7daa4;
-            border-color: #e3c999;
+            border-color: #dda199;
             cursor: default;
         }
 
@@ -113,12 +112,10 @@
             .eui-btn-grey:hover {
                 background-color: #ddd;
                 border-color: #bbb;
-                color: #333;
             }
 
             .eui-btn-grey:active {
                 border-color: #fff;
-                color: #333;
             }
 
         .eui-btn-grey-dis {
