@@ -1,0 +1,130 @@
+        .eui-btn {
+            min-width: 80px;
+            height: 35px;
+            padding: 2px 5px;
+            border: 1px solid;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            .eui-btn:hover {
+                color: #fff;
+            }
+            /*去除chrome/opera外边框*/
+            .eui-btn:focus {
+                outline: none;
+            }
+
+        /*绿色*/
+        .eui-btn-green {
+            min-width: 100px;
+            background-color: #52934a;
+            border-color: #0c5700;
+        }
+
+            .eui-btn-green:hover {
+                background-color: #4a8442;
+                border-color: #0c5700;
+            }
+
+            .eui-btn-green:active {
+                border-color: #fff;
+            }
+
+        .eui-btn-green-dis {
+            min-width: 100px;
+            background-color: #bad4b7;
+            border-color: #9ebc99;
+            cursor: default;
+        }
+
+        /*蓝色*/
+        .eui-btn-blue {
+            background-color: #6aa8d7;
+            border-color: #3a78a5;
+        }
+
+            .eui-btn-blue:hover {
+                background-color: #5f97c1;
+                border-color: #3a78a5;
+            }
+
+            .eui-btn-blue:active {
+                border-color: #fff;
+            }
+
+        .eui-btn-blue-dis {
+            background-color: #c3dcef;
+            border-color: #b0c9db;
+            cursor: default;
+        }
+
+        /*红色*/
+        .eui-btn-red {
+            background-color: #dd4a38;
+            border-color: #aa1300;
+        }
+
+            .eui-btn-red:hover {
+                background-color: #c64232;
+                border-color: #aa1300;
+            }
+
+            .eui-btn-red:active {
+                border-color: #fff;
+            }
+
+        .eui-btn-red-dis {
+            background-color: #f1b7af;
+            border-color: #dda199;
+            cursor: default;
+        }
+
+        /*黄色*/
+        .eui-btn-yellow {
+            background-color: #eaa31c;
+            border-color: #b97900;
+        }
+
+            .eui-btn-yellow:hover {
+                background-color: #d29219;
+                border-color: #b97900;
+            }
+
+            .eui-btn-yellow:active {
+                border-color: #fff;
+            }
+
+        .eui-btn-yellow-dis {
+            background-color: #f7daa4;
+            border-color: #dda199;
+            cursor: default;
+        }
+
+        /*灰色*/
+        .eui-btn-grey {
+            background-color: #f6f6f6;
+            border-color: #bbb;
+            color: #333;
+        }
+
+            .eui-btn-grey:hover {
+                background-color: #ddd;
+                border-color: #bbb;
+            }
+
+            .eui-btn-grey:active {
+                border-color: #fff;
+            }
+
+        .eui-btn-grey-dis {
+            background-color: #fbfbfb;
+            border-color: #e4e4e4;
+            color: #adadad;
+            cursor: default;
+        }
+
+            .eui-btn-grey-dis:hover {
+                color: #adadad;
+            }
