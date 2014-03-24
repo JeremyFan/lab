@@ -135,6 +135,7 @@
         /*测试，带徽章*/
         .btn-upload {
             position: relative;
+            overflow: visible; /* for ie.*/
         }
         .btn-upload > .badge {
             position: absolute;
