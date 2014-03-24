@@ -139,6 +139,7 @@
         .btn-upload > .badge {
             position: absolute;
             top: -8px;
+	    right: -10px;
             background-color: red;
         }
         .badge {
