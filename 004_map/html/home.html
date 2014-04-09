@@ -1,0 +1,108 @@
+<!Doctype html>
+<head>
+	<title>start</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../styles/home.css" type="text/css">
+	<script src="http://api.map.baidu.com/api?v=1.4" type="text/javascript"></script>
+	<script src="../jQuery/jquery-2.1.0.js"></script>
+</head>
+<body>
+	<header class="hd">
+		<div class="searcher">
+			<input class="searchbox" id="searchText" type="text" placeholder="搜点儿什么吧" />
+			<button class="btn-search" id="btnSearch" type="button">搜索</button>
+		</div>
+	</header>
+	<aside class="aside">
+		<header class="aside-hd">
+		</header>
+		<p class="title">
+			校园周边
+		</p>
+		<div class="nearby">
+			<div class="item">
+				<span class="item-img food"></span>
+				<span class="item-text">
+					餐饮
+				</span>
+			</div>
+			<div class="item">
+				<span class="item-img book"></span>
+				<span class="item-text">
+					书店
+				</span>
+			</div>
+			<div class="item">
+				<span class="item-img stationery"></span>
+				<span class="item-text">
+					文具店
+				</span>
+			</div>
+			<div class="item">
+				<span class="item-img netbar"></span>
+				<span class="item-text">
+					网吧
+				</span>
+			</div>
+			<div class="item">
+				<span class="item-img busstop"></span>
+				<span class="item-text">
+					公交站
+				</span>
+			</div>
+		</div>
+		<p class="title">
+			留言板
+		</p>
+		<div class="sounds">
+			<div class="words">
+				<div class="user">
+					<a href="#">无关紧要</a> 说：
+				</div>
+				<div class="judge">
+					<!-- <span class="point">评分</span> -->
+					<p>这个不错。</p>
+				</div>
+			</div>
+			<div class="words">
+				<div class="user">
+					<a href="#">s神</a> 说：
+				</div>
+				<div class="judge">
+					<!-- <span class="point">评分</span> -->
+					<p>我来过这里，周围环境很好。。</p>
+				</div>
+			</div>
+			<div class="words">
+				<div class="user">
+					<a href="#">小莫</a> 说：
+				</div>
+				<div class="judge">
+					<!-- <span class="point">评分</span> -->
+					<p>周围好吃。</p>
+				</div>
+			</div>
+		</div>
+	</aside>
+	<div class="main">
+		<div class="main-c" id="mapContainer">
+		</div>
+	</div>
+	<script type="text/javascript"> 
+		var map = new BMap.Map("mapContainer");          // 创建地图实例  
+		var point = new BMap.Point(117.204, 39.084);  // 创建点坐标 天津
+		map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别  
+		map.addControl(new BMap.NavigationControl());  // 添加大小调整控件
+		map.enableScrollWheelZoom(); // 滚轮调整大小 
+
+		var local = new BMap.LocalSearch(map, {    
+ 			renderOptions:{map: map}    
+		});    
+
+
+		$('#btnSearch').on('click',function(){
+			var text=$('#searchText').val();
+			local.search(text); 
+		})
+	</script>  
+</body>
