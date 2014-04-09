@@ -1,0 +1,168 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8" />
+	<title>netease fe interview</title>
+	<style>
+		.des{
+			background:#f0f0f0;
+			padding:15px;
+			font-size:14px; 
+		}
+	</style>
+</head>
+<body>
+	<script src="http://cdn.bootcss.com/jquery/2.1.0/jquery.js"></script>
+	<style>
+		.tb{
+			border-collapse: collapse;
+		}
+		.tb td{
+			width:50px;
+			height:30px;
+			border:1px solid #bbb;
+		}
+
+		.tb2{
+			background-color:#bbb;
+		}
+		.tb2 td{
+			width:50px;
+			height:30px;
+			background-color:#fff;
+		}
+	</style>
+	<h4>单元格1px边的表格</h4>
+	<table class='tb'>
+		<tbody>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class='des'>
+		1.table border-collapse:collapse;合并重叠的边距。td border:1px solid #bbb;
+	</p>
+	<br>
+	<table class='tb2' cellspacing='1'>
+		<tbody>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class='des'>
+		2.table加上属性cellspacing='1',单元格之间设置1px空间, background-color:#bbb; td background-color:#fff;
+		都能实现，感觉2挺新颖的。 区别在于单元格的盒模型有无1px border。
+	</p>
+
+	<style>
+		.nav li{
+			display:inline-block;
+			list-style: none;
+			width:100px;
+			height:30px;
+			line-height: 30px;
+			text-align: center;
+			cursor:default;
+		}
+		.nav li:hover{
+			background-color:#f6f6f6;
+
+		}
+		.tab.active{
+			display:block;
+		}
+		.tab-container{
+			height:200px;
+		}
+		.tab{
+			display:none;
+			width:400px;
+			height:140px;
+			background:lightblue;
+			padding:20px;
+			text-align: center;
+		}
+	</style>
+	<h4>页签</h4>
+	<ul class='nav'>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<div class="tab-container">
+		<div class='tab'>
+			页签1
+		</div>
+		<div class='tab'>
+			页签2
+		</div>
+		<div class='tab'>
+			页签3
+		</div>
+	</div>
+	<script>
+		var $navLis=$('.nav li');
+		$navLis.on('click',function(){
+			var $this=$(this),
+				index=$navLis.index($this)+1,
+				$tab=$('.tab-container>.tab:nth-child('+index+')');
+
+			$('.tab').removeClass('active');
+			$tab.addClass('active');
+		})
+	</script>
+	<p class='des'>
+		不给li加标记属性，数组.index(当前jQuery对象)取到是第几个li，然后用.tab:nth-child(n)显示对应的tab。
+	</p>
+
+	<style>
+		.rock{
+			position: relative;
+			width:200px;
+			height:100px;
+			margin-top:10px;
+			background:orange;
+		}
+	</style>
+	<h4>抖动</h4>
+	<input type='button' class='btn-rock' value='rock'>
+	<input type='button' class='btn-stop' value='stop'>
+	<div class='rock'></div>
+	<p class='des'>
+		使用animate完成动画效果。stop()方法可以中止当前动画。
+	</p>
+
+	<script>
+		var $rock=$('.rock'),
+			$btnRock=$('.btn-rock'),
+			$btnStop=$('.btn-stop');
+		$('.btn-rock').on('click',function(){
+			$rock.animate({left:'+=20px'},100);
+			$rock.animate({left:'-=20px'},100);
+			$rock.animate({left:'+=20px'},100);
+			$rock.animate({left:'-=20px'},100);
+		})
+		$('.btn-stop').on('click',function(){
+			if($rock.is(':animated')){
+				$rock.stop(true);
+			}
+		})
+
+
+	</script>
+
+
+</body>
