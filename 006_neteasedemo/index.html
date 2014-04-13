@@ -159,7 +159,7 @@
 	  	    $title3=$('.title-3'),
 	  		top=$(this).scrollTop(),
 	  		contentTop=$content.position().top;
-	  		title3Top=$title3.position().top+contentTop;
+	  		title3Top=$title3.position().top+contentTop+5;
 		if(top>contentTop&&top<title3Top){
 			$slider.removeClass('bottom').addClass('fixed');
 		}
