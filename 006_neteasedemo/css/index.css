@@ -8,20 +8,34 @@
 
 .content{
 	position: relative;
-	padding-left:25px;
+	/*padding-left:25px;*/
 	background:22px url(../images/bg_line.png) repeat-y;
 }
 
+.title{
+	height:70px;
+	background:left no-repeat;
+}
+.title-1{
+	background-image: url(../images/h1.png);
+}
+.title-2{
+	background-image: url(../images/h2.png);
+}
+.title-3{
+	background-image: url(../images/h3.png);
+}
+
+
 .sec{
 	position: relative;
+	margin-left:25px;
 	background:#fff;
 	overflow: hidden;
 }
 
-/*底部留白*/
 .sec-3{
-	/*border:1px solid red;*/
-	margin-bottom: 200px;
+	margin-bottom: 1000px;
 }
 
 .item{

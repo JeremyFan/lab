@@ -4,7 +4,7 @@
 	<meta content="target-densitydpi=device-dpi,width=640" name="viewport">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="css/index.css">
-	<title>LG Display</title>
+	<title>LG OLED</title>
 </head>
 <body>
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -18,6 +18,7 @@
 			<img class="img-hd" src="images/hd.jpg" alt="LG OLED" />
 		</div>
 		<div class="content">
+			<div class="title title-1"></div>
 			<div class="sec sec-1">
 				<div class="item active">
 					<img class="img-1-1" src="images/1_1.jpg" alt="LG OLED" />
@@ -34,6 +35,7 @@
 					</li>
 				</ol>
 			</div>
+			<div class="title title-2"></div>
 			<div class="sec sec-2">
 				<div class="item">
 					<img class="img-2-1" src="images/2_1.jpg" alt="LG OLED" />
@@ -68,6 +70,7 @@
 					</li>
 				</ol>
 			</div>
+			<div class="title title-3"></div>
 			<div class="sec sec-3">
 				<div class="item active">
 					<img class="img-3-1" src="images/3_1.jpg" alt="LG OLED" />
@@ -158,17 +161,19 @@
 		$(document).on("scroll",function(){
 		  	var $slider=$('.slider'),
 		  	    $content=$('.content'),
-		  	    $sec3=$('.sec-3'),
+		  	    // $sec3=$('.sec-3'),
+		  	    $title3=$('.title-3'),
 		  		top=$(this).scrollTop(),
 		  		contentTop=$content.position().top;
-		  		sec3Top=$sec3.position().top+contentTop;
-		  		// debugger;
-			if(top>contentTop&&top<sec3Top+100){
+		  		// sec3Top=$sec3.position().top+contentTop;
+		  		title3Top=$title3.position().top+contentTop+10;
+		  		debugger;
+			if(top>contentTop&&top<title3Top){
 				$slider.removeClass('bottom').addClass('fixed');
 			}
 			else{
 			    $slider.removeClass('fixed');
-			    if(top>sec3Top+100){
+			    if(top>title3Top){
 			    	$slider.addClass('bottom');
 			    }
 			}
