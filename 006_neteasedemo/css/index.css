@@ -1,0 +1,37 @@
+.hd{
+	/*background:pink;*/
+	height:804px;
+}
+.img-hd{
+	height:100%;
+}
+.sec-1,
+.sec-2,
+.sec-3{
+	position: relative;
+	background:#fff;
+}
+
+.indicator{
+	position: absolute;
+	bottom: 5px;
+	width:100%;
+	margin:0 auto;
+	padding-left:0;
+	list-style: none;
+	text-align: center;
+}
+
+.indicator li{
+	display:inline-block;
+}
+
+.indicator li span{
+	display: block;
+	width:24px;
+	height:20px;
+	background: center url(../images/o.png) no-repeat transparent;
+}
+.indicator li.active span{
+	background-image:url(../images/oactive.png);
+}
