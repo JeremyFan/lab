@@ -1,6 +1,6 @@
 .hd{
-	/*background:pink;*/
 	height:804px;
+	max-width: 640px;
 }
 .img-hd{
 	height:100%;
@@ -8,7 +8,7 @@
 
 .content{
 	position: relative;
-	/*padding-left:25px;*/
+	max-width:640px;
 	background:22px url(../images/bg_line.png) repeat-y;
 }
 
@@ -41,55 +41,26 @@
 .item{
 	position: relative;
 	display:none;
-	transition: .6s ease-in-out left;
-	-webkit-transition: .6s ease-in-out left;
 }
 
-.active,
-.next,
-.prev {
+.item.active,
+.item.next,
+.item.prev {
   display: block;
 }
 
-.active {
-  left: 0;
-}
-
-.next,
-.prev {
+.item.next,
+.item.prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
-
-.next {
+.item.next {
   left: 100%;
 }
-
-.prev {
+.item.prev {
   left: -100%;
 }
-.next.left,
-.prev.right {
-  left: 0;
-}
-
-.active.left {
-  left: -100%;
-}
-
-.active.right {
-  left: 100%;
-}
-
-/*.item.next{
-	left:100%;
-}
-
-.item.active{
-	left:0;
-	display:block;
-}*/
 
 .indicator{
 	position: absolute;
@@ -115,6 +86,7 @@
 	background-image:url(../images/oactive.png);
 }
 
+/*滑块*/
 .slider{
 	position: absolute;
 	top:0;
@@ -123,150 +95,59 @@
 	height:581px;
 	background:left url(../images/slider.png) no-repeat transparent;
 }
-
 .slider.fixed{
 	position: fixed;
 }
-
 .slider.bottom{
 	top:auto;
 	bottom: 0;
 }
 
-
-
-
-
 /*动画*/
-.bounceinR{
-	-webkit-animation:1s ease-out backwards;
-	-moz-animation:1s ease-out backwards;
-	-ms-animation:1s ease-out backwards;
-	animation:1s ease-out backwards;
-
-	-webkit-animation-name:bounceinR;
-	-moz-animation-name:bounceinR;
-	-ms-animation-name:bounceinR;
-	animation-name:bounceinR;
+/*左->右*/
+.slide-l2r{
+	-webkit-animation:slide-l2r 1s ease-in-out backwards;
+	-moz-animation:slide-l2r 1s ease-in-out backwards;
+	-ms-animation:slide-l2r 1s ease-in-out backwards;
+	animation:slide-l2r 1s ease-in-out backwards;
 }
-.bounceinL{
-	-webkit-animation:1s ease-out backwards;
-	-moz-animation:1s ease-out backwards;
-	-ms-animation:1s ease-out backwards;
-	animation:1s ease-out backwards;
-
-	-webkit-animation-name:bounceinL;
-	-moz-animation-name:bounceinL;
-	-ms-animation-name:bounceinL;
-	animation-name:bounceinL;
-}
-.bounceoutL{
-	-webkit-animation:1s ease-out backwards;
-	-moz-animation:1s ease-out backwards;
-	-ms-animation:1s ease-out backwards;
-	animation:1s ease-out backwards;
-
-	-webkit-animation-name:bounceoutL;
-	-moz-animation-name:bounceoutL;
-	-ms-animation-name:bounceoutL;
-	animation-name:bounceoutL;
-}
-.bounceoutR{
-	-webkit-animation:1s ease-out backwards;
-	-moz-animation:1s ease-out backwards;
-	-ms-animation:1s ease-out backwards;
-	animation:1s ease-out backwards;
-
-	-webkit-animation-name:bounceoutR;
-	-moz-animation-name:bounceoutR;
-	-ms-animation-name:bounceoutR;
-	animation-name:bounceoutR;
-}
-
-
-/* 弹入-从右 */
-@-webkit-keyframes bounceinR{
-    0%{-webkit-transform:translateX(100px);}
-    100%{-webkit-transform:translateX(0);}
-}
-@-moz-keyframes bounceinR{
-    0%{opacity:0;-moz-transform:translateX(100px);}
-    60%{opacity:1;-moz-transform:translateX(-30px);}
-    80%{-moz-transform:translateX(10px);}
-    100%{-moz-transform:translateX(0);}
-}
-@-ms-keyframes bounceinR{
-    0%{opacity:0;-ms-transform:translateX(100px);}
-    60%{opacity:1;-ms-transform:translateX(-30px);}
-    80%{-ms-transform:translateX(10px);}
-    100%{-ms-transform:translateX(0);}
-}
-@keyframes bounceinR{
-    0%{opacity:0;transform:translateX(100px);}
-    60%{opacity:1;transform:translateX(-30px);}
-    80%{transform:translateX(10px);}
-    100%{transform:translateX(0);}
-}
-/* 弹入-从左 */
-@-webkit-keyframes bounceinL{
-    0%{-webkit-transform:translateX(-100px);}
-    100%{-webkit-transform:translateX(0);}
-}
-@-moz-keyframes bounceinL{
-    0%{opacity:0;-moz-transform:translateX(-100px);}
-    60%{opacity:1;-moz-transform:translateX(30px);}
-    80%{-moz-transform:translateX(-10px);}
-    100%{-moz-transform:translateX(0);}
-}
-@-ms-keyframes bounceinL{
-    0%{opacity:0;-ms-transform:translateX(-100px);}
-    60%{opacity:1;-ms-transform:translateX(30px);}
-    80%{-ms-transform:translateX(-10px);}
-    100%{-ms-transform:translateX(0);}
-}
-@keyframes bounceinL{
-    0%{opacity:0;transform:translateX(-100px);}
-    60%{opacity:1;transform:translateX(30px);}
-    80%{transform:translateX(-10px);}
-    100%{transform:translateX(0);}
-}
-/* 弹出-向左 */
-@-webkit-keyframes bounceoutL{
+@-webkit-keyframes slide-l2r{
     0%{-webkit-transform:translateX(0);}
-    100%{-webkit-transform:translateX(-100px);}
+    100%{-webkit-transform:translateX(615px);}
 }
-@-moz-keyframes bounceoutL{
-    0%{-moz-transform:translateX(0);}
-    20%{opacity:1;-moz-transform:translateX(20px);}
-    100%{opacity:0;-moz-transform:translateX(-100px);}
+@-moz-keyframes slide-l2r{
+	0%{-moz-transform:translateX(0);}
+    100%{-moz-transform:translateX(615px);}
 }
-@-ms-keyframes bounceoutL{
-    0%{-ms-transform:translateX(0);}
-    20%{opacity:1;-ms-transform:translateX(20px);}
-    100%{opacity:0;-ms-transform:translateX(-100px);}
+@-ms-keyframes slide-l2r{
+	0%{-ms-transform:translateX(0);}
+    100%{-ms-transform:translateX(615px);}
 }
-@keyframes bounceoutL{
-    0%{transform:translateX(0);}
-    20%{opacity:1;transform:translateX(20px);}
-    100%{opacity:0;transform:translateX(-200px);}
+@keyframes slide-l2r{
+	0%{transform:translateX(0);}
+    100%{transform:translateX(615px);}
 }
-/* 弹出-向右*/
-@-webkit-keyframes bounceoutR{
-    0%{-webkit-transform:translateX(0);}
-    100%{-webkit-transform:translateX(100px);}
+
+/*右->左*/
+.slide-r2l{
+	-webkit-animation: slide-r2l 1s ease-in-out backwards;
+	-moz-animation: slide-r2l 1s ease-in-out backwards;
+	-ms-animation: slide-r2l 1s ease-in-out backwards;
+	animation: slide-r2l 1s ease-in-out backwards;
 }
-@-moz-keyframes bounceoutR{
-    0%{-moz-transform:translateX(0);}
-    20%{opacity:1;-moz-transform:translateX(-20px);}
-    100%{opacity:0;-moz-transform:translateX(100px);}
+@-webkit-keyframes slide-r2l{
+	0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(-615px);}
 }
-@-ms-keyframes bounceoutR{
-    0%{-ms-transform:translateX(0);}
-    20%{opacity:1;-ms-transform:translateX(-20px);}
-    100%{opacity:0;-ms-transform:translateX(100px);}
+@-moz-keyframes slide-r2l{
+	0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(-615px);}
 }
-@keyframes bounceoutR{
-    0%{transform:translateX(0);}
-    20%{opacity:1;transform:translateX(-20px);}
-    100%{opacity:0;transform:translateX(100px);}
+@-ms-webkit-keyframes slide-r2l{
+	0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(-615px);}
+}
+@keyframes slide-r2l{
+	0%{-webkit-transform:translateX(0);}
+    100%{-webkit-transform:translateX(-615px);}
 }

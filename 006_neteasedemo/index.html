@@ -10,10 +10,7 @@
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
-	<div data-role="page" id="page">
-<!-- 		<div style="position:relative;width:100px;height:30px;background-color:pink;" class="bounceoutR" >
-			123
-		</div> -->
+	<div data-role="page" id="index">
 		<div class="hd">
 			<img class="img-hd" src="images/hd.jpg" alt="LG OLED" />
 		</div>
@@ -92,15 +89,9 @@
 			</div>
 		</div>
 
-
-
-
-
-
-
-
 	<script>
-	$(document).on("pageinit","#page",function(){
+
+	$(document).on("pageinit","#index",function(){
 		$('.sec-1,.sec-2,.sec-3')
 			.on('swipeleft',function(){
 				var	$this=$(this), // sec
@@ -124,8 +115,12 @@
 					$activeLi.removeClass('active');
 					$nextLi.addClass('active');
 
-					$activeItem.removeClass('active');
-					$nextItem.addClass('active');
+					$activeItem.addClass('slide-r2l').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
+						$(this).removeClass('slide-r2l active');
+					})
+					$nextItem.addClass('slide-r2l next').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
+						$(this).removeClass('slide-r2l next').addClass('active');
+					})
 
 			}).on('swiperight',function(){
 				var	$this=$(this), // sec
@@ -149,36 +144,32 @@
 					$activeLi.removeClass('active');
 					$prevLi.addClass('active');
 
-					$activeItem.removeClass('active');
-					$prevItem.addClass('active');
+					$activeItem.addClass('slide-l2r').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
+						$(this).removeClass('slide-l2r active');
+					})
+					$prevItem.addClass('slide-l2r prev').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
+						$(this).removeClass('slide-l2r prev').addClass('active');
+					})
 			})
-
-			setSlider();
 	});
 
-	/// 设置左侧滑动条
-	function setSlider(){
-		$(document).on("scroll",function(){
-		  	var $slider=$('.slider'),
-		  	    $content=$('.content'),
-		  	    // $sec3=$('.sec-3'),
-		  	    $title3=$('.title-3'),
-		  		top=$(this).scrollTop(),
-		  		contentTop=$content.position().top;
-		  		// sec3Top=$sec3.position().top+contentTop;
-		  		title3Top=$title3.position().top+contentTop+10;
-		  		debugger;
-			if(top>contentTop&&top<title3Top){
-				$slider.removeClass('bottom').addClass('fixed');
-			}
-			else{
-			    $slider.removeClass('fixed');
-			    if(top>title3Top){
-			    	$slider.addClass('bottom');
-			    }
-			}
-		});
-	}
+	$(document).on("scroll",function(){
+	  	var $slider=$('.slider'),
+	  	    $content=$('.content'),
+	  	    $title3=$('.title-3'),
+	  		top=$(this).scrollTop(),
+	  		contentTop=$content.position().top;
+	  		title3Top=$title3.position().top+contentTop;
+		if(top>contentTop&&top<title3Top){
+			$slider.removeClass('bottom').addClass('fixed');
+		}
+		else{
+		    $slider.removeClass('fixed');
+		    if(top>title3Top){
+		    	$slider.addClass('bottom');
+		    }
+		}
+	});
 
 	</script>
 </body>
