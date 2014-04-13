@@ -11,58 +11,84 @@
 	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
 	<div data-role="page" id="page">
+<!-- 		<div style="position:relative;width:100px;height:30px;background-color:pink;" class="bounceoutR" >
+			123
+		</div> -->
 		<div class="hd">
 			<img class="img-hd" src="images/hd.jpg" alt="LG OLED" />
 		</div>
-		<div class="sec-1">
-			<div class="item">
-				<img class="img-1-1" src="images/1_1.jpg" alt="LG OLED" />
+		<div class="content">
+			<div class="sec sec-1">
+				<div class="item active">
+					<img class="img-1-1" src="images/1_1.jpg" alt="LG OLED" />
+				</div>
+				<div class="item">
+					<img class="img-1-2" src="images/1_2.jpg" alt="LG OLED" />
+				</div>
+				<ol class="indicator">
+					<li class="active">
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+				</ol>
 			</div>
-			<ol class="indicator">
-				<li class="active">
-					<span></span>
-				</li>
-				<li>
-					<span></span>
-				</li>
-			</ol>
-		</div>
-		<div class="sec-2">
-			<div class="item">
-				<img class="img-2-1" src="images/2_1.jpg" alt="LG OLED" />
+			<div class="sec sec-2">
+				<div class="item">
+					<img class="img-2-1" src="images/2_1.jpg" alt="LG OLED" />
+				</div>
+				<div class="item active">
+					<img class="img-2-2" src="images/2_2.jpg" alt="LG OLED" />
+				</div>
+				<div class="item next">
+					<img class="img-2-3" src="images/2_3.jpg" alt="LG OLED" />
+				</div>
+				<div class="item">
+					<img class="img-2-4" src="images/2_4.jpg" alt="LG OLED" />
+				</div>
+				<div class="item">
+					<img class="img-2-5" src="images/2_5.jpg" alt="LG OLED" />
+				</div>
+				<ol class="indicator">
+					<li>
+						<span></span>
+					</li>
+					<li class="active">
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+				</ol>
 			</div>
-			<ol class="indicator">
-				<li>
-					<span></span>
-				</li>
-				<li class="active">
-					<span></span>
-				</li>
-				<li>
-					<span></span>
-				</li>
-				<li>
-					<span></span>
-				</li>
-				<li>
-					<span></span>
-				</li>
-			</ol>
-		</div>
-		<div class="sec-3">
-			<div class="item">
-				<img class="img-3-1" src="images/3_1.jpg" alt="LG OLED" />
+			<div class="sec sec-3">
+				<div class="item active">
+					<img class="img-3-1" src="images/3_1.jpg" alt="LG OLED" />
+				</div>
+				<div class="item">
+					<img class="img-3-2" src="images/3_2.jpg" alt="LG OLED" />
+				</div>
+				<ol class="indicator">
+					<li class="active">
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+				</ol>
 			</div>
-			<ol class="indicator">
-				<li class="active">
-					<span></span>
-				</li>
-				<li>
-					<span></span>
-				</li>
-			</ol>
+
+			<div class="slider"></div>
+			</div>
 		</div>
-	</div>
+
 
 
 
@@ -74,11 +100,74 @@
 	$(document).on("pageinit","#page",function(){
 		$('.sec-1,.sec-2,.sec-3')
 			.on('swipeleft',function(){
-				alert('left');
+				var	$this=$(this), // sec
+					$items=$this.children('.item'),
+					$activeItem=$this.children('.item.active'),
+					$nextItem=$activeItem.next('.item'),
+					$indicator=$this.children('.indicator'),
+					$lis=$indicator.children('li'),
+					// $activeLi=$lis.eq(index),
+					$activeLi=$indicator.children('li.active'),
+					$nextLi=$activeLi.next('li');
+
+					// 最后一项时
+					if($nextItem.length===0){
+						$nextItem=$items.eq(0);
+					}
+					if($nextLi.length===0){
+						$nextLi=$lis.eq(0);
+					}
+
+					$activeLi.removeClass('active');
+					$nextLi.addClass('active');
+
+					$activeItem.removeClass('active').addClass('left').removeClass('next');
+					$nextItem.addClass('active').addClass('next').addClass('left');
+
 			}).on('swiperight',function(){
-				alert('right');
+				var	$this=$(this), // sec
+					$items=$this.children('.item'),
+					$activeItem=$this.children('.item.active'),
+					$prevItem=$activeItem.prev('.item'),
+					$indicator=$this.children('.indicator'),
+					$lis=$indicator.children('li'),
+					// $activeLi=$lis.eq(index),
+					$activeLi=$indicator.children('li.active'),
+					$prevLi=$activeLi.prev('li');
+
+					// 第一项时
+					if($prevItem.length===0){
+						$prevItem=$items.eq($items.length-1);
+					}
+					if($prevLi.length===0){
+						$prevLi=$lis.eq($lis.length-1);
+					}
+
+					$activeLi.removeClass('active');
+					$prevLi.addClass('active');
+
+					$activeItem.removeClass('active');
+					$prevItem.addClass('active');
 			})
+
+			setSlider();
 	});
+
+	/// 设置左侧滑动条
+	function setSlider(){
+		$(document).on("scroll",function(){
+		  	var $slider=$('.slider'),
+		  	    $content=$('.content'),
+		  		top=$(this).scrollTop(),
+		  		contentTop=$('.content').offset().top;
+			if(top>contentTop){
+				$slider.addClass('fixed');
+			}
+			else{
+			    $slider.removeClass('fixed');
+			}
+		});
+	}
 
 	</script>
 </body>
