@@ -26,7 +26,6 @@
 	background-image: url(../images/h3.png);
 }
 
-
 .sec{
 	position: relative;
 	margin-left:25px;
@@ -140,14 +139,14 @@
     100%{-webkit-transform:translateX(-615px);}
 }
 @-moz-keyframes slide-r2l{
-	0%{-webkit-transform:translateX(0);}
-    100%{-webkit-transform:translateX(-615px);}
+	0%{-moz-transform:translateX(0);}
+    100%{-moz-transform:translateX(-615px);}
 }
-@-ms-webkit-keyframes slide-r2l{
-	0%{-webkit-transform:translateX(0);}
-    100%{-webkit-transform:translateX(-615px);}
+@-ms-keyframes slide-r2l{
+	0%{-ms-transform:translateX(0);}
+    100%{-ms-transform:translateX(-615px);}
 }
 @keyframes slide-r2l{
-	0%{-webkit-transform:translateX(0);}
-    100%{-webkit-transform:translateX(-615px);}
+	0%{transform:translateX(0);}
+    100%{transform:translateX(-615px);}
 }
