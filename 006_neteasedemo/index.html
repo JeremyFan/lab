@@ -41,7 +41,7 @@
 				<div class="item active">
 					<img class="img-2-2" src="images/2_2.jpg" alt="LG OLED" />
 				</div>
-				<div class="item next">
+				<div class="item">
 					<img class="img-2-3" src="images/2_3.jpg" alt="LG OLED" />
 				</div>
 				<div class="item">
@@ -121,8 +121,8 @@
 					$activeLi.removeClass('active');
 					$nextLi.addClass('active');
 
-					$activeItem.removeClass('active').addClass('left').removeClass('next');
-					$nextItem.addClass('active').addClass('next').addClass('left');
+					$activeItem.removeClass('active');
+					$nextItem.addClass('active');
 
 			}).on('swiperight',function(){
 				var	$this=$(this), // sec
@@ -158,13 +158,19 @@
 		$(document).on("scroll",function(){
 		  	var $slider=$('.slider'),
 		  	    $content=$('.content'),
+		  	    $sec3=$('.sec-3'),
 		  		top=$(this).scrollTop(),
-		  		contentTop=$('.content').offset().top;
-			if(top>contentTop){
-				$slider.addClass('fixed');
+		  		contentTop=$content.position().top;
+		  		sec3Top=$sec3.position().top+contentTop;
+		  		// debugger;
+			if(top>contentTop&&top<sec3Top+100){
+				$slider.removeClass('bottom').addClass('fixed');
 			}
 			else{
 			    $slider.removeClass('fixed');
+			    if(top>sec3Top+100){
+			    	$slider.addClass('bottom');
+			    }
 			}
 		});
 	}

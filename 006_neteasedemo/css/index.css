@@ -18,6 +18,12 @@
 	overflow: hidden;
 }
 
+/*底部留白*/
+.sec-3{
+	/*border:1px solid red;*/
+	margin-bottom: 200px;
+}
+
 .item{
 	position: relative;
 	display:none;
@@ -106,6 +112,11 @@
 
 .slider.fixed{
 	position: fixed;
+}
+
+.slider.bottom{
+	top:auto;
+	bottom: 0;
 }
 
 
