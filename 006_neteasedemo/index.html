@@ -94,8 +94,16 @@
 	$(document).on("pageinit","#index",function(){
 		$('.sec-1,.sec-2,.sec-3')
 			.on('swipeleft',function(){
-				var	$this=$(this), // sec
-					$items=$this.children('.item'),
+				var	$this=$(this); // sec
+
+					if($this.hasClass('sliding')) {
+						return;
+					}
+					else{
+						$this.addClass('sliding');
+					}
+
+				var	$items=$this.children('.item'),
 					$activeItem=$this.children('.item.active'),
 					$nextItem=$activeItem.next('.item'),
 					$indicator=$this.children('.indicator'),
@@ -120,11 +128,20 @@
 					})
 					$nextItem.addClass('slide-r2l next').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
 						$(this).removeClass('slide-r2l next').addClass('active');
+						$this.removeClass('sliding');
 					})
 
 			}).on('swiperight',function(){
-				var	$this=$(this), // sec
-					$items=$this.children('.item'),
+				var	$this=$(this); // sec
+
+					if($this.hasClass('sliding')) {
+						return;
+					}
+					else{
+						$this.addClass('sliding');
+					}
+
+				var	$items=$this.children('.item'),
 					$activeItem=$this.children('.item.active'),
 					$prevItem=$activeItem.prev('.item'),
 					$indicator=$this.children('.indicator'),
@@ -149,6 +166,7 @@
 					})
 					$prevItem.addClass('slide-l2r prev').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',function(){
 						$(this).removeClass('slide-l2r prev').addClass('active');
+						$this.removeClass('sliding');
 					})
 			})
 	});
