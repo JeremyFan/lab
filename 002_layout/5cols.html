@@ -1,0 +1,60 @@
+<!doctype html>
+<head>
+    <title>layout</title>
+    <style>
+        html, body {
+            min-width:750px;
+            height: 100%;
+            margin: 0;
+        }
+
+        .side-l,
+        .side-r,
+        .container,
+        .content,
+        .main {
+            height: 300px;
+        }
+
+        .side-l {
+            position: relative;
+            float: left;
+            width: 100px;
+            margin-right: -100px;
+            background-color: #c0c0c0;
+        }
+
+        .side-r {
+            position: relative;
+            float: right;
+            width: 200px;
+            margin-left: -200px;
+            background-color: #c0c0c0;
+        }
+
+        .container {
+            float: left;
+            width: 100%;
+        }
+
+        .content {
+            margin: 0 200px 0 100px;
+            background-color: #ffcb99;
+        }
+
+        .main {
+            width:450px;
+            margin: 0 auto;
+            background-color: #99cdff;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-l"></div>
+    <div class="container">
+        <div class="content">
+            <div class="main"></div>
+        </div>
+    </div>
+    <div class="side-r"></div>
+</body>
