@@ -79,7 +79,7 @@
 
 				this.context.drawImage(this.video,0,0,this.video.width,this.video.height);
 
-				imageData=getdata(this.video,0,0,this.video.width,this.video.height);
+				imageData=getdata(this.context,0,0,this.video.width,this.video.height);
 
 				for (var i = 0; i < imageData.width*imageData.height*4; i+=4) {
 	                var gray = (imageData.data[i+0]+imageData.data[i+1]+imageData.data[i+2])/3;
