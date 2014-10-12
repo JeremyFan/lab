@@ -12,12 +12,15 @@
 		</p>
 
 		<div>
-			<video src="Source/gd.mp4" width="500" controls>
+			<video id="v" src="Source/gd.mp4" width="500" height="275" controls></video>
+			<canvas id="cVideo" width="500" height="275">
 		</div>
 
 		<script type="text/JavaScript">
 		window.onload=function(){
 			go();
+
+			VideoPlay.init();
 		}
 
 		function getdata(c,x,y,w,h) {
@@ -52,6 +55,40 @@
                
             }
             Co.putImageData(Do, 0, 0);
+			}
+		}
+
+		var VideoPlay={
+			init:function(){
+				var videoplay=this;
+				this.video=document.querySelector('#v');
+				this.canvas=document.querySelector('#cVideo');
+				this.context=this.canvas.getContext('2d');
+
+				this.video.onplay=function(){
+					videoplay.drawCanvas();
+				}
+			},
+
+			drawCanvas:function(){
+				var videoplay=this,
+					imageData;
+				if(this.video.paused||this.video.ended){
+					return false;
+				}
+
+				this.context.drawImage(this.video,0,0,this.video.width,this.video.height);
+
+				imageData=getdata(this.video,0,0,this.video.width,this.video.height);
+
+				for (var i = 0; i < imageData.width*imageData.height*4; i+=4) {
+	                var gray = (imageData.data[i+0]+imageData.data[i+1]+imageData.data[i+2])/3;
+	                imageData.data[i+0]=gray;  imageData.data[i+1]=gray;  imageData.data[i+2]=gray;
+            	}
+
+				setTimeout(function(){
+					videoplay.drawCanvas();
+				},20);
 			}
 		}
 		</script>
