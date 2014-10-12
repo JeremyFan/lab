@@ -1,0 +1,59 @@
+<html>
+	<head>
+
+	</head>
+	
+	<body>
+		<p>
+			<img id="img1" src="Source/body.jpg" width="320"/>
+		</p>
+		<p>
+			<canvas id="Resultimg" width="600" height="600"/>
+		</p>
+
+		<div>
+			<video src="Source/gd.mp4" width="500" controls>
+		</div>
+
+		<script type="text/JavaScript">
+		window.onload=function(){
+			go();
+		}
+
+		function getdata(c,x,y,w,h) {
+          var d;
+          try {
+            try {
+              d = c.getImageData(x,y,w,h);
+            } catch (e) {
+              netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+              d = c.getImageData(x,y,w,h);
+            }
+          } catch (e) {
+            throw new Error("unable to access image data: " + e);
+          }
+          return(d);
+        }
+		
+		function go() {
+			var canvas = document.getElementById('Resultimg');
+			var Co = canvas.getContext('2d');
+			var img = new Image();
+			img.src = "Source/body.jpg";
+			img.onload = function() {
+				Co.drawImage(img, 0, 0);
+				Do = getdata(Co, 0, 0, canvas.width, canvas.height);
+				for (var i = 0; i < Do.width*Do.height*4; i+=4) {
+                var gray = (Do.data[i+0]+Do.data[i+1]+Do.data[i+2])/3;
+                var red   = Do.data[i+0];
+                var green = Do.data[i+1];
+                var blue  = Do.data[i+2];
+                Do.data[i+0]=gray;  Do.data[i+1]=gray;  Do.data[i+2]=gray;
+               
+            }
+            Co.putImageData(Do, 0, 0);
+			}
+		}
+		</script>
+	</body>
+</html>
