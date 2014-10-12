@@ -86,6 +86,8 @@
 	                imageData.data[i+0]=gray;  imageData.data[i+1]=gray;  imageData.data[i+2]=gray;
             	}
 
+            	this.context.putImageData(imageData, 0, 0);
+
 				setTimeout(function(){
 					videoplay.drawCanvas();
 				},20);
