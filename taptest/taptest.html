@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <title>点击测试</title>
+  <meta charset="utf-8">
+  <style>
+    .btn{
+      width:60px;
+      height:35px;
+      background:center url(back.png) no-repeat;
+    }
+    a,span{
+      display:inline-block;
+    }
+    button{
+      border:none;
+      outline:none;
+    }
+    .button-2:focus,
+    .button-2:active{
+      border:none;
+      outline:none;
+      background-color:transparent;
+    }
+
+    .a-2:focus,
+    .a-2:active{
+      border:none;
+      outline:none;
+      background-color:transparent;
+    }
+
+    .span-2:focus,
+    .span-2:active{
+      border:none;
+      outline:none;
+      background-color:transparent;
+    }
+  </style>
+</head>
+<body>
+  <p>button</p>
+  <button type="button" class="btn"></button>
+  <button type="button" class="btn button-2"></button>
+  <p>a</p>
+  <a href="#" class="btn"></a>
+  <a href="#" class="btn a-2"></a>
+  <p>span</p>
+  <span class="btn"></span>
+  <span class="btn span-2"></span>
+</body>
+</html>
