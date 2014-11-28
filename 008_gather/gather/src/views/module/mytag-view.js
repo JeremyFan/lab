@@ -24,15 +24,15 @@ define(function (require, exports, module) {
 
       if(!this.myTagCollection.length){
         this.myTagCollection.create({id:1,name:'吸星大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法大法'});
-        this.myTagCollection.create({id:1,name:'吸星大法'});
+        this.myTagCollection.create({id:2,name:'吸星大法'});
+        this.myTagCollection.create({id:3,name:'吸星大法大法'});
+        this.myTagCollection.create({id:4,name:'吸星大法大法'});
+        this.myTagCollection.create({id:5,name:'吸星大法'});
+        this.myTagCollection.create({id:6,name:'吸星大法'});
+        this.myTagCollection.create({id:7,name:'吸星大法'});
+        this.myTagCollection.create({id:8,name:'吸星大法大法'});
+        this.myTagCollection.create({id:9,name:'吸星大法大法'});
+        this.myTagCollection.create({id:10,name:'吸星大法'});
       }
     },
 
