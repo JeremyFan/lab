@@ -18,5 +18,5 @@
     preload: ['plugin-text', '$', 'underscore']
   });
 
-  seajs.use('../static/main');
+  seajs.use('../gather/main');
 })()
