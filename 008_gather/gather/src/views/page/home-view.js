@@ -58,7 +58,7 @@ define(function (require, exports, module) {
       }
       else if($tabpane.attr('id')===TabPane.MeId){
         this.initMyTagData();
-        this.meScroll.refresh();
+        // this.meScroll.refresh();
       }
       
     },
