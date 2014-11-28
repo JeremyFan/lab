@@ -1,0 +1,170 @@
+/*
+ * 说明：home-view样式
+ * 作者：fanjzh
+ * 创建日期：2014.11.24
+ */
+
+.page-body{
+  position: relative;
+}
+
+.home-nav{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:.44rem;
+  background: #fcfcfc center url(/img/app/webunite/gatherapp/home-nav-back.png) no-repeat;
+  background-size:1px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.home-nav>li{
+  float:left;
+  width:50%;
+  height:.44rem;
+
+}
+.home-nav>li>a{
+  float:left;
+  box-sizing:border-box;
+  height:.44rem;
+  width:100%;
+  line-height:.44rem;
+  text-align:center;
+  font-size:.16rem;
+  font-weight:bold;
+  color:#333;
+}
+.home-nav>li>a.active{
+  color:#0091ff;
+  border-bottom: 3px solid #0091ff;
+}
+
+.tab-content{
+  box-sizing:border-box;
+  height:100%;
+  padding-top:.45rem;
+}
+
+.tab-pane{
+  display:none;
+  box-sizing:border-box;
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  background:#eee;
+}
+.tab-pane p{
+  height:.5rem;
+}
+.tab-pane.active{
+  display:block;
+}
+
+.tab-pane .title{
+  height:.3rem;
+  padding-left:.1rem;
+  line-height: .3rem;
+  border-bottom: 1px solid #ccc;
+  font-size:.12rem;
+  color:#666;
+}
+
+/*tag-view*/
+.tag-list{
+  padding:.1rem;
+  background:#fff;
+}
+.tag-list>li{
+  display:inline-block;
+  width:50%;
+  height:.26rem;
+  padding:.07rem 0;
+  text-align: center;
+}
+.tag-list>li>span{
+  display:inline-block;
+  /*height:.16rem;*/
+  min-height:.16rem;
+  line-height:.16rem;
+  padding:.05rem .15rem;
+  background:#32c32a;
+  border-radius:3px;
+  color:#fff;
+}
+
+/*recommend-gather-view*/
+.recommend-gather-list{
+  background:#eee;
+}
+.recommend-gather{
+  margin-bottom:.1rem;
+  background:#fff;
+}
+.recommend-gather>header{
+  height:.22rem;
+  line-height:.22rem;
+  padding:.1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.recommend-gather>header .name{
+  float:left;
+  font-size:.16rem;
+  font-weight: bold;
+}
+.recommend-gather>header .more{
+  float:right;
+  width:.44rem;
+  height:.22rem;
+  line-height:.22rem;
+  border:1px solid #ccc;
+  border-radius: .11rem;
+  text-align:center;
+  font-size:.12rem;
+  color:#ccc;
+}
+
+.recommend-article{
+  position: relative;
+  height:.6rem;
+  padding:.1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.recommend-article img{
+  float:left;
+  width:.8rem;
+  height:.6rem;
+  margin-right:.1rem;
+  border:none;
+  background-size:100%;
+}
+.recommend-article .article-title{
+  line-height:.18rem;
+  font-size:.14rem;
+  font-weight:bold;
+}
+.recommend-article .article-tag-list{
+  position: absolute;
+  left:1rem;
+  bottom: .15rem;
+}
+.recommend-article .article-tag-list>li{
+  display:inline-block;
+  margin-right:.05rem;
+}
+.recommend-article .article-tag-list>li>span{
+  padding:.02rem .05rem;
+  border-radius: 3px;
+  font-size:.12rem;
+  color:#fff;
+}
+.recommend-article .read-count{
+  position: absolute;
+  right:.1rem;
+  bottom:.15rem;
+  padding-left:.22rem;
+  background:left url(/img/app/webunite/gatherapp/read-count.png) no-repeat;
+  color:#9a9a9a;
+}

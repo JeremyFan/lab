@@ -1,0 +1,15 @@
+/*
+ * 说明：基础样式，适用于所有页面
+ * 作者：fanjzh
+ * 创建日期：2014.11.24
+ */
+
+html{
+  font: 625%/1 "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+body{
+  font-size:.14rem;
+}
+
+a{text-decoration: none;}

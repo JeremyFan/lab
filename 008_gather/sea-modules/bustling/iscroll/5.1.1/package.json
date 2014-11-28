@@ -1,0 +1,21 @@
+{
+  "family": "bustling",
+  "name": "iscroll",
+  "version": "5.1.1",
+  "description": "Smooth scrolling for the web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cubiq/iscroll.git"
+  },
+  "keywords": [
+    "scrolling",
+    "carousel",
+    "zoom",
+    "iphone",
+    "android",
+    "mobile",
+    "desktop"
+  ],
+  "author": "Matteo Spinelli <matteo@cubiq.org> (http://cubiq.org)",
+  "license": "MIT"
+}

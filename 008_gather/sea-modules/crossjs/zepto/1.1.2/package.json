@@ -1,0 +1,42 @@
+{
+  "name": "zepto",
+  "version": "1.1.2",
+  "description": "zepto modified for seajs",
+  "keywords": [ "zepto", "seajs", "modules" ],
+  "homepage": "https://github.com/crossjs/zepto",
+  "bugs": {
+    "url": "https://github.com/crossjs/zepto/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/crossjs/zepto/blob/master/LICENSE-MIT"
+    }
+  ],
+  "author": {
+    "name": "crossjs",
+    "url": "https://github.com/crossjs"
+  },
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crossjs/zepto.git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-cmd-transport": "*",
+    "matchdep": "*"
+  },
+  "family": "crossjs",
+  "spm": {
+    "output": [ "zepto.js" ],
+    "alias": { }
+  }
+}
