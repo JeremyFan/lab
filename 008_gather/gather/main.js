@@ -9,7 +9,9 @@ define(function (require, exports, module) {
   window.workSpace = new Router();
   window.Template=require('../gather/src/templates/templates_module');
 
+  window.document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
   Backbone.history.start();
 
-  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
 })
