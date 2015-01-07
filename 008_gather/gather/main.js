@@ -11,5 +11,5 @@ define(function (require, exports, module) {
 
   Backbone.history.start();
 
-
+  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 })
