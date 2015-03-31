@@ -148,3 +148,9 @@ body{
         -moz-transform: translateY(-10px)
     }
 }
+
+.swiper-pagination{
+  top:auto !important;
+  left:10px;
+  bottom:0;
+}

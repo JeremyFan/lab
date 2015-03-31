@@ -42,8 +42,15 @@
         width:100%;
         height:100%;
     }
+    .swiper-slide a:link,
+    .swiper-slide a:hover,
+    .swiper-slide a:active{
+        border:none;
+    }
     .swiper-slide a img{
         width:100%;
+        height:100%;
+        border:none;
     }
 
     </style>
@@ -52,13 +59,13 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a href="javascript:;"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_banner1.jpg"></a>
+                <a href="Detail/IOS/index.html"><img src="http://download.feixin.10086.cn//UploadImages/2015-03-24/md_main_banner3.jpg"></a>
             </div>
             <div class="swiper-slide">
-                <a href="javascript:;"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_banner1.jpg"></a>
+                <a href="Detail/android/index.html"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-13/md_main_banner2.jpg"></a>
             </div>
             <div class="swiper-slide">        
-                <a href="javascript:;"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_banner1.jpg"></a>
+                <a href="../swiper/newindex.html"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_banner1.jpg"></a>
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -193,7 +200,8 @@
     var swiper = new Swiper('.swiper-container',{
         pagination: '.swiper-pagination',
         paginationClickable: true,
-        autoplay:3000
+        autoplay:3000,
+        loop:true
     });
 
     /*选项卡*/
