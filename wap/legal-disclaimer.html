@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>飞信</title>
+    <link rel="stylesheet" href="http://download.feixin.10086.cn/UploadFile/2015-03-12/md_main_style.css" />
+</head>
+<body class="bg-color">
+	<header>
+		<h1>法律声明</h1>
+		<a class="return" href="index.html"></a>
+	</header>
+	<div class="team-of-service" id="drop">
+		<h2 class="hide">服务条款</h2>
+		<div class="content">
+			<p class="ellipsis">使用本网站前，请您仔细阅读下述条款。如您不同意本服务条款或中国移动通信网对其进行的修改，您可以主动取消中国移动通信网提供的服务；您一旦使用中国移动通信网提供的服务，即视为您已了解并完全同意本服务条款各项内容，包括中国移动通信网对服务条款所做的任何修改，并成为中国移动通信网的用户（以下简称“用户”）。
+            </p>
+		</div>
+	</div>
+	<ul class="law-list">
+		<li><a href="legal-disclalmer/ownership.html">版权归属</a></li>
+		<li><a href="legal-disclalmer/disclaimer.html">免责声明</a></li>
+		<li><a href="legal-disclalmer/protection.html">隐私权保护</a></li>
+		<li><a href="legal-disclalmer/predictive.html">预测性陈述</a></li>
+		<li class="last"><a href="legal-disclalmer/ipr.html">知识产权<span></span></a></li>
+	</ul>
+	<script type="text/javascript">
+		var oDrop=document.getElementById('drop');
+        var oP=oDrop.getElementsByTagName('p')[0];
+        var oH2=oDrop.getElementsByTagName('h2')[0];
+        oDrop.onclick=function(){
+            oH2.className = oP.className == 'ellipsis' ? 'show' : 'hide';
+            oP.className = oP.className == 'ellipsis' ? null : 'ellipsis';
+        };
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>飞信</title>
+    <link rel="stylesheet" href="http://download.feixin.10086.cn/UploadFile/2015-03-12/md_main_style.css" />
+</head>
+<body>
+<header>
+    <h1>关于飞信</h1>
+    <a class="return" href="index.html"></a>
+</header>
+<div class="about">
+    <div class="main">
+        <h2>飞信介绍</h2>
+
+        <p>飞信（Fetion）是中国移动自2007年起推出的社交通讯工具，为用户打造基础电信级别的互联网、移动互联网融合通信平台。<br>飞信支持PC客户端、手机客户端、WAP等多种方式登录，支持跨通信运营商、跨操作系统的免费短信发送和语音、视频、图片、文字等多媒体消息发送，实现多端信息接收，保证用户沟通永不离线。<br>飞信具备飞信电话、多方通话、飞信身边、公众平台等社交和综合服务能力，让用户可以随分享身边精彩内容，开创全新的互动沟通方式
+        </p>
+    </div>
+    <div class="main">
+        <h2>适用用户</h2>
+
+        <p>中国移动手机用户（含全球通、动感地带、神州行、政企客户）<br>非中国移动手机用户（中国联通用户、中国电信用户）<br>互联网用户（邮箱注册用户、昵称注册用户）</p>
+    </div>
+    <div class="main">
+        <h2>适用范围</h2>
+
+        <p>PC平台：windows版、苹果Mac版、网页版、迷你版、企业版、校园版手机平台：手机客户端版、WAP飞信版、3G飞信版、HD for iPad版、安卓pad版</p>
+    </div>
+    <h2>飞信特性</h2>
+    <ul class="clear">
+        <li name="phone"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon01.jpg"><span>飞信电话</span></li>
+        <li name="sms"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon02.jpg"><span>免费短信</span></li>
+        <li name="multi"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon03.jpg"><span>多方通话</span></li>
+        <li name="side"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon04.jpg"><span>飞信身边</span></li>
+    </ul>
+    <ul class="clear">
+        <li name="chat"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon05.jpg"><span>音视频聊天</span></li>
+        <li name="forum"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon06.jpg"><span>公众平台</span></li>
+        <li name="group"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_main_icon07.jpg"><span>讨论组</span></li>
+        <li></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    var oLi = document.getElementsByTagName('li');
+    for (var i = 0; i < oLi.length; i++) {
+        var name = oLi[i].getAttribute('name');
+        if (name != 'null' && name != null) {
+            (function (i, name) {
+                oLi[i].onclick = function () {
+                    window.location.href = 'features/' + name + '.html';
+                }
+            })(i, name);
+        }
+    }
+
+    function pre() {
+        if (arguments.length == 1) {
+            return arguments[0].getElementsByTagName('p')[0].className;
+        } else if (arguments.length == 2) {
+            arguments[0].getElementsByTagName('h2')[0].className = arguments[1];
+            arguments[0].getElementsByTagName('p')[0].className = arguments[1] == 'up' ? 'ellipsis' : null;
+        }
+    }
+
+    var oDiv = document.getElementsByClassName('main'), j = 0;
+    for (var i = 0; i < oDiv.length; i++) {
+        if (oDiv[i].getElementsByTagName('p')[0].clientHeight > 60) {
+            pre(oDiv[i], 'up');
+            (function (i) {
+                oDiv[i].onclick = function () {
+                    if (i == j) {
+                        pre(this, pre(this) == 'ellipsis' ? 'down' : 'up');
+                    } else {
+                        pre(oDiv[j], 'up');
+                        pre(this, 'down');
+                        j = i;
+                    }
+                }
+            })(i);
+        }
+    }
+
+</script>
+</body>
+</html>

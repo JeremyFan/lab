@@ -1,0 +1,88 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title></title>
+    <link rel="stylesheet" type="text/css" href="http://download.feixin.10086.cn/UploadFile/2015-03-12/md_all_dtail.css" />
+    <style>
+        .text01 img{width:248px;height:105px}.text02{position:absolute;top:20%;text-align:center;width:100%}.text02 img{width:143px;height:80px}.text03,.text04,.text05{position:absolute;top:25%;text-align:center;width:100%}.text03 img,.text04 img{width:120px;height:31px}.text05 img{width:211px;height:31px}
+    </style>
+
+<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/zepto.min.js"></script>
+</head>
+<body>
+<div class="swiper-container">
+	<div class="videobox"></div>
+	<div class="swiper-wrapper" id="scene">
+		<div class="swiper-slide slide1">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android01.jpg" alt=""></div>
+			<div class="text01"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text01.png"></div>
+			<div class="btn">
+				<a href="http://download.feixin.10086.cn/download/OSDownloadToComputer.action?id=164"><img class="pt-page-rotateUnfoldTop" src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_button.png"></a>
+			</div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+		<div class="swiper-slide slide2">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android02.jpg"  alt=""></div>
+			<div class="text02"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text02.png"></div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+		<div class="swiper-slide slide3">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android03.jpg"  alt=""></div>
+			<div class="text03"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text03.png"></div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+		<div class="swiper-slide slide4">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android04.jpg" alt=""></div>
+			<div class="text04"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text04.png"></div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+		<div class="swiper-slide slide5">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android05.jpg" alt=""></div>
+			<div class="text05"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text05.png"></div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+		<div class="swiper-slide slide6">
+			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_android01.jpg" alt=""></div>
+			<div class="text01"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_text01.png"></div>
+			<div class="btn">
+				<a href="http://download.feixin.10086.cn/download/OSDownloadToComputer.action?id=164"><img class="pt-page-rotateUnfoldTop" src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_ard_button.png"></a>
+			</div>
+			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
+		</div>
+	</div><!-- /scene -->
+	<div class="pagination"></div>
+</div>
+<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/click.js"></script>
+<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/idangerous1.js"></script>
+<script type="text/javascript">
+    var imgUrl = "images/share.jpg";
+    var lineLink = "index.html";
+    var descContent = "";
+    var appid = '';
+    document.documentElement.addEventListener('touchmove', function(e){
+        e.preventDefault();
+    });
+    //全屏滚动
+    var mySwiper = new Swiper('.swiper-container',{
+    pagination: '.pagination',
+        mode: 'vertical',
+        onSlideChangeStart: function(swiper){
+            //动画
+            var curpage = mySwiper.activeIndex;
+            if(!$(".slide"+curpage).hasClass("slide"+curpage+"-show")){
+              $(".slide"+curpage).addClass("slide"+curpage+"-show");
+            }
+            $(".slide"+(curpage-1)).removeClass("slide"+(curpage-1)+"-show");
+            $(".slide"+(curpage+1)).removeClass("slide"+(curpage+1)+"-show");
+        }
+    })
+
+</script>
+
+
+</body>
+</html>
