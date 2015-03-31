@@ -1,88 +1,70 @@
-<!DOCTYPE >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<title></title>
-    <link rel="stylesheet" type="text/css" href="http://download.feixin.10086.cn/UploadFile/2015-03-12/md_all_dtail.css" />
-    <style>
-        .text01 img{width:249px;height:107px}.text02,.text03,.text04,.text05{position:absolute;top:20%;text-align:center;width:100%}.text02 img{width:147px;height:34px}.text03 img{width:256px;height:34px}.text04 img{width:90px;height:34px}.text05 img{width:90px;height:34px}
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="idangerous.swiper.css"/>
+  <link rel="stylesheet" type="text/css" href="page.css" />
+  <title></title>
 
-<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/zepto.min.js"></script>
 </head>
 <body>
-<div class="swiper-container">
-	<div class="videobox"></div>
-	<div class="swiper-wrapper" id="scene">
-		<div class="swiper-slide slide1">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP01.jpg" alt=""></div>
-			<div class="text01"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text01.png"></div>
-			<div class="btn">
-				<a href="http://download.feixin.10086.cn/download/OSDownloadToComputer.action?id=160"><img class="pt-page-rotateUnfoldTop" src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_button.png"></a>
-			</div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-		<div class="swiper-slide slide2">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP02.jpg"  alt=""></div>
-			<div class="text02"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text02.png"></div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-		<div class="swiper-slide slide3">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP03.jpg"  alt=""></div>
-			<div class="text03"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text03.png"></div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-		<div class="swiper-slide slide4">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP04.jpg" alt=""></div>
-			<div class="text04"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text04.png"></div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-		<div class="swiper-slide slide5">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP05.jpg" alt=""></div>
-			<div class="text05"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text05.png"></div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-		<div class="swiper-slide slide6">
-			<div class="bg"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_WP01.jpg" alt=""></div>
-			<div class="text01"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_text01.png"></div>
-			<div class="btn">
-				<a href="http://download.feixin.10086.cn/download/OSDownloadToComputer.action?id=160"><img class="pt-page-rotateUnfoldTop" src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_win_button.png"></a>
-			</div>
-			<div class="s-jiantou"><img src="http://download.feixin.10086.cn/UploadImages/2015-03-12/md_all_jiantou.png" alt=""></div>
-		</div>
-	</div><!-- /scene -->
-	<div class="pagination"></div>
-</div>
-<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/click.js"></script>
-<script type="text/javascript" src="http://download.feixin.10086.cn/UploadFile/2015-03-12/idangerous1.js"></script> 
-<script type="text/javascript">
-    var imgUrl = "images/share.jpg";
-    var lineLink = "index.html";
-    var descContent = "";
-    var appid = '';
-    document.documentElement.addEventListener('touchmove', function(e){
-        e.preventDefault();
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide1">
+        <div class="content">
+          <div class="text">
+            <img src="img/text01.png">
+            <a href="javascript:;"><img class="pt-page-rotateUnfoldTop" src="img/button.png"></a>
+          </div>
+          <span class="down"></span>
+        </div>
+      </div>
+      <div class="swiper-slide slide2">
+        <div class="content">
+          <img src="img/text02.png">
+          <span class="down"></span>
+        </div>
+      </div>
+      <div class="swiper-slide slide3">
+        <div class="content">
+          <img src="img/text03.png">
+          <span class="down"></span>
+        </div>
+      </div>
+      <div class="swiper-slide slide4">
+        <div class="content">
+          <img src="img/text04.png">
+          <span class="down"></span>
+        </div>
+      </div>
+      <div class="swiper-slide slide5">
+        <div class="content">
+          <img src="img/text05.png">
+          <span class="down"></span>
+        </div>
+      </div>
+      <div class="swiper-slide slide1">
+        <div class="content">
+          <div class="text">
+            <img src="img/text01.png">
+            <a href="javascript:;"><img class="pt-page-rotateUnfoldTop" src="img/button.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <script src="idangerous.swiper.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical'
     });
-    //全屏滚动
-    var mySwiper = new Swiper('.swiper-container',{
-    pagination: '.pagination',
-        mode: 'vertical',
-        onSlideChangeStart: function(swiper){
-            //动画
-            var curpage = mySwiper.activeIndex;
-            if(!$(".slide"+curpage).hasClass("slide"+curpage+"-show")){
-              $(".slide"+curpage).addClass("slide"+curpage+"-show");
-            }
-            $(".slide"+(curpage-1)).removeClass("slide"+(curpage-1)+"-show");
-            $(".slide"+(curpage+1)).removeClass("slide"+(curpage+1)+"-show");
-        }
-    })
+  </script>
 
-</script>
-
-
+  
 </body>
 </html>
