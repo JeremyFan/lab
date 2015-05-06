@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <city name="BeiJing">
+    <title>北京</title>
+    <longitude>39.97712</longitude>
+    <latitude>116.353455</latitude>
+    <state>0</state>
+    <info>我在这里生活啦。</info>
+  </city>
+
+
+
+  <city name="TianJin">
+    <title>天津</title>
+    <longitude>39.095963</longitude>
+    <latitude>117.198715</latitude>
+    <state>-1</state>
+    <info>大学呆了4年的地方！</info>
+  </city>
+
+  <city name="HangZhou">
+    <title>杭州</title>
+    <longitude>30.268556</longitude>
+    <latitude>120.144768</latitude>
+    <state>-1</state>
+    <info>慢城。早晨的西湖被爷爷奶奶叔叔阿姨攻占。</info>
+  </city>
+
+  <city name="NanJing">
+    <title>南京</title>
+    <longitude>32.073266</longitude>
+    <latitude>118.804436</latitude>
+    <state>-1</state>
+    <info>心仪的城市。只呆了3个小时，秦淮河很美。</info>
+  </city>
+  <city name="JiNan">
+    <title>济南</title>
+    <longitude>36.659606</longitude>
+    <latitude>117.090569</latitude>
+    <state>-1</state>
+    <info>三大名胜坑爹，但芙蓉街是我见过的最挤的小吃街，完爆北京地铁和其他小吃街。</info>
+  </city>
+  <city name="WuLanChaBu">
+	<title>乌兰察布</title>
+	<longitude>41.104191</longitude>
+    <latitude>112.889156</latitude>
+    <state>-1</state>
+    <info>辉腾西勒草原行。</info>
+  </city>
+  <city name="ZhangJiaKou">
+	<title>张家口</title>
+	<longitude>41.186922</longitude>
+    <latitude>114.729366</latitude>
+    <state>-1</state>
+    <info>2012张北草原音乐节！！</info>
+  </city>
+  <city name="JiaXing">
+	<title>嘉兴</title>
+	<longitude>30.744786</longitude>
+    <latitude>120.4883276</latitude>
+    <state>-1</state>
+    <info>乌镇看腻了的夜景。和晚上才急急赶到的小伙。和带着4个姑娘到土豪。</info>
+  </city>
+  <city name="QinHuangDao">
+	<title>秦皇岛</title>
+	<longitude>39.844395</longitude>
+    <latitude>119.484129</latitude>
+    <state>-1</state>
+    <info>北戴河。各种人凑到一起，算是毕业旅行了。”紧闭着双眼倾听着大海的声音，重复着那句勇敢的话语。“——老谢</info>
+  </city>
+  <city name="TangShan">
+	<title>唐山</title>
+	<longitude>39.642181</longitude>
+    <latitude>118.186004</latitude>
+    <state>-1</state>
+    <info>说话好玩，可是感觉空气好差。</info>
+  </city>
+  <city name="TaiAn">
+	<title>泰安</title>
+	<longitude>36.190538</longitude>
+    <latitude>117.099044</latitude>
+    <state>-1</state>
+    <info>泰山。在山顶搭帐篷过夜，风好大，差点冻死。早晨没有看到日出。</info>
+  </city>
+  <city name="HuangShan">
+	<title>黄山</title>
+	<longitude>29.7137</longitude>
+    <latitude>118.340499</latitude>
+    <state>-1</state>
+    <info>黄山。阴雨天悲剧。没看到云海，没看到日出。哦山顶12人间280一晚的床位，睡过最恶劣同时最贵的旅店了^_^。</info>
+  </city>
+  <city name="TaiYuan">
+	<title>太原</title>
+	<longitude>37.875395</longitude>
+    <latitude>112.550704</latitude>
+    <state>-1</state>
+    <info>忽然跑到一个不太熟到同学那里躲避。</info>
+  </city>
+  
+  
+  
+  <city name="GuangZhou">
+    <title>广州</title>
+    <longitude>23.14036</longitude>
+    <latitude>113.26561</latitude>
+    <state>1</state>
+    <info>大概是要去过年？</info>
+  </city>
+</data>

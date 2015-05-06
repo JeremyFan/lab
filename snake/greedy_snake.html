@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>greedy snake</title>
+  </head>
+  <body>
+    <style>
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0;
+      }
+      .trail { /* className for the trail elements */
+        position: absolute;
+        height: 16px; width: 16px;
+        border-radius: 50%;
+        background: teal;
+      }
+    </style>
+
+    <script>
+      var dots=[];
+      var currentDot=0;
+      start();
+      /// 新食物
+      function newDot(){
+        /// 吃
+        function eat(e){
+          newDot();
+          this.removeEventListener('mouseenter',eat);
+          dots.push(this);
+        }
+        var node=document.createElement('div');
+        node.className="trail";
+        node.style.top=Math.random()*(document.body.clientHeight-20)+'px';
+        node.style.left=Math.random()*(document.body.clientWidth-20)+'px';
+        node.addEventListener('mouseenter',eat)
+        document.body.appendChild(node);
+        return node;
+      }
+      // 开始
+      function start(){
+        var firstDot=newDot();
+        function handler(){
+          firstDot.removeEventListener('mouseenter',handler);
+          document.addEventListener('mousemove',function(e){
+            var dot=dots[currentDot];
+            dot.style.left = (event.pageX - 12) + "px";
+            dot.style.top = (event.pageY - 12) + "px";
+            currentDot=(currentDot+1)%dots.length;
+          });
+        }
+        firstDot.addEventListener('mouseenter',handler);
+      }
+    </script>
+  </body>
+</html>

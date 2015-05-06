@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCR7LVud9l47JPTO8X7nqJxAc1UrM8WPI&sensor=true"></script>
+    <link rel="stylesheet" href="footprints.css" type="text/css" />
+    <title>Footprints</title>
+</head>
+<body>
+    <div class="g-content">
+        <div class="u-mc" id="map-canvas"></div>
+    </div>
+    <script>
+        $(function () {
+            initMap();
+
+            $(cities).each(function () {
+                console.log(this.name);
+            })
+        });
+
+        var map = null;
+        /// Init map.
+        function initMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(39.97712, 116.353455),
+                zoom: 4,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            setData();
+
+            drop();
+        }
+
+        /// Data container.
+        var cities = new Array();
+        /// Get data and push them to cities.
+        function setData() {
+            $.ajax({
+                type: "post",
+                url: "data.xml",
+                async: false,
+                success: function (xml) {
+                    $(xml).find('city').each(function () {
+                        var item = $(this);
+                        var city = {
+                            'name': item.attr('name'),
+                            'title': item.find('title').text(),
+                            'longitude': item.find('longitude').text(),
+                            'latitude': item.find('latitude').text(),
+                            'state': item.find('state').text(),
+                            'info': item.find('info').text(),
+                        }
+                        cities.push(city);
+                    });
+                }
+            });
+        }
+
+        /// Drop markers with different time.
+        function drop() {
+            $(cities).each(function (index) {
+                var city = this;
+                setTimeout(function () {
+                    addMarker(city);
+                }, Math.random() * 5000);
+            })
+        }
+
+        /// Add a marker to map.
+        function addMarker(city) {
+            var marker = new google.maps.Marker({
+                // Set animation with city state.
+                // State 0 is for the city I am now in and it jumps.
+                animation: city.state ==0 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP,
+                position: new google.maps.LatLng(city.longitude, city.latitude),
+                map: map,
+                // Set icon for cities with different state.
+                icon: city.state==-1?null:'images/i_'+city.state+'.png',
+                title: city.title,
+                'info': city.info
+            });
+            bindInfo(marker);
+        }
+
+        /// Bind infomation of marker.
+        function bindInfo(marker) {
+            // Create infowindow with some options.
+            var infowindow = new google.maps.InfoWindow(
+                {
+                    content: marker.title+'<br/>---------------<br/>'+marker.info,
+                    //size: new google.maps.Size(200, 150)
+                    maxWidth: 200
+                });
+            // Open infowindow when mouse over.
+            google.maps.event.addListener(marker, 'mouseover', function () {
+                infowindow.open(map, marker);
+            });
+            // Close infowindow when mouse out.
+            google.maps.event.addListener(marker, 'mouseout', function () {
+                infowindow.close(map, marker);
+            })
+        }
+
+    </script>
+</body>
