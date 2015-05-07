@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <head>
-    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCR7LVud9l47JPTO8X7nqJxAc1UrM8WPI&sensor=true"></script>
     <link rel="stylesheet" href="footprints.css" type="text/css" />
+    <meta charset="utf-8">
     <title>Footprints</title>
 </head>
 <body>
     <div class="g-content">
         <div class="u-mc" id="map-canvas"></div>
     </div>
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCR7LVud9l47JPTO8X7nqJxAc1UrM8WPI&sensor=true"></script>
+    <script type="text/javascript" src="data.js"></script>
     <script>
         $(function () {
             initMap();
 
-            $(cities).each(function () {
-                console.log(this.name);
-            })
+            // $(cities).each(function () {
+            //     console.log(this.name);
+            // })
         });
 
         var map = null;
@@ -37,6 +39,8 @@
         var cities = new Array();
         /// Get data and push them to cities.
         function setData() {
+            cities=data||[];
+            /*
             $.ajax({
                 type: "post",
                 url: "data.xml",
@@ -56,6 +60,7 @@
                     });
                 }
             });
+            */
         }
 
         /// Drop markers with different time.
